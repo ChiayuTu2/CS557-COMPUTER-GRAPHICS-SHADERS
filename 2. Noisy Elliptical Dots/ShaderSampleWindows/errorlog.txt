@@ -1,0 +1,3 @@
+
+0(75) : error C1038: declaration of "d" conflicts with previous declaration at 0(69)
+
