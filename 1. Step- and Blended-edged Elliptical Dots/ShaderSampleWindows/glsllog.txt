@@ -1,0 +1,6 @@
+
+0(32) : error C1503: undefined variable "uDs"
+0(32) : error C1503: undefined variable "uDs"
+0(32) : error C1503: undefined variable "uDt"
+0(32) : error C1503: undefined variable "uDt"
+

@@ -1,0 +1,4 @@
+
+ERROR: 0:47: 'vLightIntensity' : undeclared identifier 
+
+
