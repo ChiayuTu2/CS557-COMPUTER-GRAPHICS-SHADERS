@@ -1,0 +1,3 @@
+﻿  sample.cpp
+sample.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+  Sample.vcxproj -> C:\Users\tulou\Desktop\School\OSU\2024_Winter\CS 557\Assignments\1. Step- and Blended-edged Elliptical Dots\ShaderSampleWindows\Debug\Sample.exe
