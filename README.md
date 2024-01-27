@@ -12,6 +12,7 @@
     <ul>
         <li>📂<a href="https://github.com/ChiayuTu2/CS557-COMPUTER-GRAPHICS-SHADERS/tree/master/0.%20Sample">0. Sample</a></li>
         <li>📂<a href="https://github.com/ChiayuTu2/CS557-COMPUTER-GRAPHICS-SHADERS/tree/master/1.%20Step-%20and%20Blended-edged%20Elliptical%20Dots">1. Step- and Blended-edged Elliptical Dots<a></li>
+        <li>📂<a href="https://github.com/ChiayuTu2/CS557-COMPUTER-GRAPHICS-SHADERS/tree/master/2.%20Noisy%20Elliptical%20Dots">2. Noisy Elliptical Dots<a></li>
         <li>📄README.md</li>
     </ul>
 </div>
