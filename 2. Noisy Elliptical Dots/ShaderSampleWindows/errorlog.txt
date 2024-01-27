@@ -1,3 +1,4 @@
 
-0(75) : error C1038: declaration of "d" conflicts with previous declaration at 0(69)
+ERROR: 0:28: '=' : syntax error syntax error
+
 

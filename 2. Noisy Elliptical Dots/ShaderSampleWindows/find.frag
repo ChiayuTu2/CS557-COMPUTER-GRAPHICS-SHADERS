@@ -10,6 +10,7 @@ uniform float uTol = 0.0;
 uniform sampler3D Noise3;
 uniform float uNoiseFreq, uNoiseAmp;
 uniform float uAlpha;
+uniform bool uUseXYZforNoise;
 
 void
 main() {
@@ -22,7 +23,13 @@ main() {
 	int numins = int( vST.s / uAd );
 	int numint = int( vST.t / uBd );
 
-	vec4 nv  = texture( Noise3, uNoiseFreq*vMCposition );
+	vec4 nv; 
+	if(uUseXYZforNoise){
+		nv = texture(Noise3, uNoiseFreq*vMCposition);
+	}else{
+		nv = texture(Noise3, uNoiseFreq*vec3(vST,0.));
+	}
+	
 
 	// give the noise a range of [-1.,+1.]:
 
