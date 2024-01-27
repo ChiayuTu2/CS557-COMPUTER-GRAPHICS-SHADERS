@@ -1,4 +1,5 @@
 
-ERROR: 0:28: '=' : syntax error syntax error
+ERROR: 0:74: 'Color' : undeclared identifier 
+ERROR: 0:75: 'constructor' : not enough data provided for construction 
 
 
