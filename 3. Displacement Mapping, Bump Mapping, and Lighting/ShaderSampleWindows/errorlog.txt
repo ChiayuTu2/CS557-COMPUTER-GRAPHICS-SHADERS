@@ -1,0 +1,3 @@
+
+0(21) : error C1059: non constant expression in initialization
+
