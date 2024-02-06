@@ -5,21 +5,17 @@ LookAt 0 0 8  0 0 0  0 1 0
 
 Vertex          rock.vert
 Fragment        rock.frag
-Program         rock                            \
+Program    Rock                                 \
                 uA <0.0 0.00 1.0>               \
                 uB <0.1 0.6 3.0>                \
                 uC <0. 0. 6.28>                 \
                 uD <0. 0. 2.>                   \
                 uNoiseAmp <0. 0. 5.>            \
                 uNoiseFreq <0.1 1. 20.>         \
-                uKa <0. 0.1 1.0>                \
-                uKd <0. 0.6 1.0>                \
-                uKs <0. 0.3 1.0>                \
-                uShininess <3. 10. 1000.>       \
                 uLightX <-20. 5. 20.>           \
                 uLightY <-20. 10. 20.>          \
                 uLightZ <-20. 20. 20.>          \
                 uColor {1. .7 0. 1.}            \
                 uSpecularColor {1. 1. 1. 1.}
 
-QuadXY  -0.2  1.  128 128
+QuadXY  -0.2  3.  128 128

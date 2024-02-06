@@ -1,3 +1,5 @@
 
-0(21) : error C1059: non constant expression in initialization
+0(53) : error C7524: OpenGL requires uniform variables to be declared in global scope
+0(53) : error C5056: 'uniform' not allowed on local variable 'uShininess'
+0(63) : error C1503: undefined variable "MC"
 
