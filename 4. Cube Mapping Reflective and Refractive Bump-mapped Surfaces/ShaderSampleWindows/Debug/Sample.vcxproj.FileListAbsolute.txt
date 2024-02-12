@@ -1,0 +1,3 @@
+Y:\CS550\Sample2022\Debug\Sample.exe
+Y:\CS550\ShaderDemoEllipse2022\Debug\Sample.exe
+Y:\CS557\ShaderSample2022\Debug\Sample.exe
