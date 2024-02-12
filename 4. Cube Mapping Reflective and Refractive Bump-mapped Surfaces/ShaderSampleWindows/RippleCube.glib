@@ -1,0 +1,33 @@
+##OpenGL GLIB
+Perspective 70
+LookAt 0 0 3  0 0 0  0 1 0
+
+CubeMap 6 nvposx.bmp nvnegx.bmp  nvposy.bmp nvnegy.bmp   nvposz.bmp nvnegz.bmp
+
+CubeMap 7 nvposx.bmp nvnegx.bmp  nvposy.bmp nvnegy.bmp   nvposz.bmp nvnegz.bmp
+
+/*
+// Kelley Engineering Center Bmp
+CubeMap 6 kec.posx.bmp kec.negx.bmp  kec.posy.bmp kec.negy.bmp   kec.posz.bmp kec.negz.bmp
+
+CubeMap 7 kec.posx.bmp kec.negx.bmp  kec.posy.bmp kec.negy.bmp   kec.posz.bmp kec.negz.bmp
+*/
+
+Vertex		rippleCube.vert
+Fragment	rippleCube.frag
+Program    	RippleCube			        \
+           	uReflectUnit 6             	\
+           	uRefractUnit 7             	\
+		    uA < ? ? ?>			        \
+		    uB < ? ? ?>			        \
+		    uD 0.5				        \
+        	uNoiseAmp <0. 0. 5.>		\
+        	uNoiseFreq <0.0 0.1 0.5>	\
+		    uEta 1.2			        \
+		    uMix <0. 0. 1.>			    \
+		    uWhiteMix 0.3
+
+PushMatrix
+Rotate -15   1 0 0
+QuadXY  -0.2  2.  300 300
+PopMatrix
