@@ -1,0 +1,4 @@
+
+ERROR: 0:48: 'vec3' : syntax error syntax error
+
+

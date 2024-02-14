@@ -47,8 +47,8 @@ main( )
 	vec3 Normal = vNs	// remember to unitize this
 	vec3 Eye =    vEs	// remember to unitize this
 
-	vec4 nvx = texture( Noise3, uNoiseFreq*vMC );
-	vec4 nvy = texture( Noise3, uNoiseFreq*vec3(vMC.xy,vMC.z+0.5) );
+	vec4 nvx = texture( Noise3, uNoiseFreq * vMC );
+	vec4 nvy = texture( Noise3, uNoiseFreq * vec3(vMC.xy, vMC.z + 0.5) );
 
 	float angx = nvx.r + nvx.g + nvx.b + nvx.a;	//  1. -> 3.
 	angx = angx - 2.;				// -1. -> 1.
@@ -61,10 +61,11 @@ main( )
 	Normal = RotateNormal( angx, angy, Normal );
 	Normal = normalize( gl_NormalMatrix * Normal );
 
-	vec3 reflectVector = reflect(vEyeDir, normal); 
+	vec3 reflectVector = reflect(vEyeDir, Normal); 
 	vec4 reflectColor = texture(uReflectUnit, reflectVector).rgb;
 
 	vec3 refractVector = refract(vEyeDir, normal, uEta);
+	
 	vec4 refractColor;
 	if( all( equal( refractVector, vec3(0.,0.,0.) ) ) )
 	{
@@ -75,6 +76,7 @@ main( )
 		refractColor = texture( uRefractUnit, refractVector );
 		refractColor = mix( refractColor, WHITE, uWhiteMix );
 	}
+	
 	vec3 color = mix(refractColor, reflectColor, uMix); 
     color = mix(color, WHITE, uWhiteMix);
     gl_FragColor = vec4(color, 1.);

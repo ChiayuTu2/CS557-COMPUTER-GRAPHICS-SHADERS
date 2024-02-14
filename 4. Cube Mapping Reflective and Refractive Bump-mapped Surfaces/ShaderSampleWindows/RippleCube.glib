@@ -8,14 +8,19 @@ Program  Texture  TexUnit 6
 
 Texture2D  6  nvposx.bmp
 QuadYZ 5. 5. 10 10
+
 Texture2D  6  nvnegx.bmp
 QuadYZ-5. 5. 10 10
+
 Texture2D  6  nvposy.bmp
 QuadXZ 5. 5. 10 10
+
 Texture2D  6  nvnegy.bmp
 QuadXZ-5. 5. 10 10
+
 Texture2D  6  nvposz.bmp
 QuadXY 5. 5. 10 10
+
 Texture2D  6  nvnegz.bmp
 QuadXY-5. 5. 10 10
 
@@ -33,12 +38,12 @@ CubeMap 7 kec.posx.bmp kec.negx.bmp  kec.posy.bmp kec.negy.bmp   kec.posz.bmp ke
 
 Vertex		rippleCube.vert
 Fragment	rippleCube.frag
-Program    	RippleCube			        \
+Program    	rippleCube			        \
            	uReflectUnit 6             	\
            	uRefractUnit 7             	\
-		    uA < ? ? ?>			        \
-		    uB < ? ? ?>			        \
-		    uD 0.5				        \
+            uA <0.0 0.0 1.0>           \
+            uB <0.1 0.6 3.0>            \
+			uD 0.5						\
         	uNoiseAmp <0. 0. 5.>		\
         	uNoiseFreq <0.0 0.1 0.5>	\
 		    uEta 1.2			        \
