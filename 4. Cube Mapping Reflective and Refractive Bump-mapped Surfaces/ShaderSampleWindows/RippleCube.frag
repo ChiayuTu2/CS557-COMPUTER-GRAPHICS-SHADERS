@@ -62,7 +62,7 @@ main( )
 	vec3 reflectVector = reflect( Eye, Normal );
 	vec4 reflectColor = textureCube( uReflectUnit, reflectVector );
 
-	vec3 refractVector = refract( Eye, Normal,  uEta);
+	vec3 refractVector = refract(Eye, Normal, uEta);
 	vec4 refractColor;
 
 	if( all( equal( refractVector, vec3(0.,0.,0.) ) ) )
