@@ -1,16 +1,14 @@
 #version 330 compatibility
 
-uniform sampler3D	Noise3;
-uniform float 		uNoiseAmp;
-uniform float 		uNoiseFreq;
 uniform float		uEta;
 uniform float 		uMix;
 uniform float 		uWhiteMix;
+uniform float 		uNoiseAmp;
+uniform float 		uNoiseFreq;
 uniform samplerCube uReflectUnit;
 uniform samplerCube uRefractUnit;
+uniform sampler3D	Noise3;
 
-in vec3 vNormal;
-in vec3 vEyeDir;
 in vec3	vMC;
 in vec3	vNs;
 in vec3	vEs;
@@ -43,9 +41,9 @@ RotateNormal( float angx, float angy, vec3 n )
 
 void
 main( )
-{
-	vec3 Normal = vNs	// remember to unitize this
-	vec3 Eye =    vEs	// remember to unitize this
+{	
+	vec3 Normal = normalize(vNs);	// remember to unitize this
+	vec3 Eye =  normalize( vEs);	// remember to unitize this
 
 	vec4 nvx = texture( Noise3, uNoiseFreq * vMC );
 	vec4 nvy = texture( Noise3, uNoiseFreq * vec3(vMC.xy, vMC.z + 0.5) );
@@ -61,12 +59,12 @@ main( )
 	Normal = RotateNormal( angx, angy, Normal );
 	Normal = normalize( gl_NormalMatrix * Normal );
 
-	vec3 reflectVector = reflect(vEyeDir, Normal); 
-	vec4 reflectColor = texture(uReflectUnit, reflectVector).rgb;
+	vec3 reflectVector = reflect( Eye, Normal );
+	vec4 reflectColor = textureCube( uReflectUnit, reflectVector );
 
-	vec3 refractVector = refract(vEyeDir, normal, uEta);
-	
+	vec3 refractVector = refract( Eye, Normal,  uEta);
 	vec4 refractColor;
+
 	if( all( equal( refractVector, vec3(0.,0.,0.) ) ) )
 	{
 		refractColor = reflectColor;
@@ -76,8 +74,5 @@ main( )
 		refractColor = texture( uRefractUnit, refractVector );
 		refractColor = mix( refractColor, WHITE, uWhiteMix );
 	}
-	
-	vec3 color = mix(refractColor, reflectColor, uMix); 
-    color = mix(color, WHITE, uWhiteMix);
-    gl_FragColor = vec4(color, 1.);
+	gl_FragColor = mix(refractColor, reflectColor, uMix );
 }
