@@ -1,3 +1,4 @@
 
-0(18) : error C1503: undefined variable "newVertex"
+0(63) : error C1060: incompatible types in initialization
+0(63) : error C1056: invalid initialization
 

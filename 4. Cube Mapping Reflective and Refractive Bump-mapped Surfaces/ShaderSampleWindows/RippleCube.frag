@@ -60,7 +60,7 @@ main( )
 	Normal = normalize( gl_NormalMatrix * Normal );
 
 	vec3 reflectVector = reflect( Eye, Normal );
-	vec4 reflectColor = textureCube( uReflectUnit, reflectVector );
+	vec4 reflectColor = texture( uReflectUnit, reflectVector );
 
 	vec3 refractVector = refract(Eye, Normal, uEta);
 	vec4 refractColor;
