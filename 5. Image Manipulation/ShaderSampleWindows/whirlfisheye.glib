@@ -1,0 +1,20 @@
+##OpenGL GLIB
+
+Ortho -1. 1.  -1. 1.
+
+LookAt  0. 0. 2.  0. 0. 0.  0. 1. 0.
+
+Texture2D  5	cat1.bmp
+Texture2D  6  	cat2.bmp
+
+Vertex	 	whirlfisheye.vert
+Fragment	whirlfisheye.frag
+Program 	WhirlFisheye			    \
+	        TexUnitA 5				    \
+	        TexUnitB 6				    \
+	        uPower <1. 1. 10.>			\
+	        uRtheta <0. 0. 50.>			\
+	        uMosaic <0.001 .001 .06>	\
+	        uBlend <0. 0. 1.>
+
+QuadXY  0.1  1.
