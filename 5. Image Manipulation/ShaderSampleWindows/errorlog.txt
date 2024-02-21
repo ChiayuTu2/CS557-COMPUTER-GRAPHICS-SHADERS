@@ -1,0 +1,4 @@
+
+0(37) : error C1503: undefined variable "st"
+0(38) : error C1503: undefined variable "st"
+
