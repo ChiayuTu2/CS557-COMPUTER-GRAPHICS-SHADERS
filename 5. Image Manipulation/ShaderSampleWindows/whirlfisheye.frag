@@ -46,8 +46,8 @@ main( ){
 	float Br = uMosaic / 2.;
 
     // which block of pixels will this pixel be in?
-    int numins = int(vST.s / uMosaic);	// same as with the ellipses
-    int numint = int(vST.t / uMosaic);	// same as with the ellipses
+    int numins = int(st.s / uMosaic);	// same as with the ellipses
+    int numint = int(st.t / uMosaic);	// same as with the ellipses
     
     float sc = float(numins) * uMosaic + Ar;		// same as with the ellipses
     float tc = float(numint) * uMosaic + Br;		// same as with the ellipses
