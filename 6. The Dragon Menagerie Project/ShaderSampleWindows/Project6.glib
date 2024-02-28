@@ -1,0 +1,26 @@
+##OpenGL GLIB
+
+Background 0 0 0
+Smooth
+Perspective 70
+LookAt 0 0 70  0 0 0  0 1 0
+
+
+Vertex		    Project6.vert
+Fragment	    Project6.frag
+Program		    Project6\
+                uNoiseAmp <0. 0.05. 5.>\
+                uNoiseFreq <0. 0.1 10.>\
+                uKa <0. 0.1 1.0>\
+                uKd <0. 1. 1.0>\
+                uKs <0. 1. 1.0>\
+                uShininess <1. 20 100.>\
+                uLightX <-40. 0. 40.>\
+                uLightY <-40. 0. 40.>\
+                uLightZ <-40. 20. 40.>\
+                uColor {0.8. 0.5. 0.2. 1.}\
+                uSpecularColor {1. 1. 1. 1.}\
+                uFlat <0>
+
+Color .9 .7 .3
+Obj dragon138.obj
