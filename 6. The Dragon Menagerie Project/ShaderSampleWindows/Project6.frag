@@ -6,9 +6,6 @@ uniform float uTol;
 
 uniform float uAlpha; 
 
-//in float vX, vY; 
-//in float vS, vT;
-
 uniform float uKa, uKd, uKs;
 uniform vec4 uColor;
 uniform vec4 uSpecularColor;
@@ -30,18 +27,10 @@ main( )
 	vec3 Light;
 	vec3 Eye;
 	
-	if(uFlat)
-	{
-		Normal = normalize(vNf);
-		Light = normalize(vLf);
-		Eye = normalize(vEf);
-	}
-	else
-	{
-		Normal = normalize(vNs);
-		Light = normalize(vLs);
-		Eye = normalize(vEs);
-	}
+	Normal = normalize(vNf);
+	Light = normalize(vLf);
+	Eye = normalize(vEf);
+
 	vec4 ambient = uKa*uColor;
 	
 	float d = max(dot(Normal,Light), 0.);
@@ -54,7 +43,7 @@ main( )
 		s = pow(max(dot(Eye,ref), 0.), uShininess);
 	}
 	
-	vec4 specular = uKs * s * uSpecularColor;
+	vec4 specular = uKs*s*uSpecularColor;
 	
 	float df = dot(Normal, Light);
 	if (df < 0.1)
@@ -72,12 +61,12 @@ main( )
 
 	float silhouette =length(Normal * vec3(0.0, 0.0, 1.0));// dot(Normal, Eye);
     if (abs(silhouette) < 0.3) 
-    {
+	{
 		silhouette = 0;
 		gl_FragColor = vec4(silhouette, silhouette, silhouette, 1.0);
     }
     else 
-    {
+	{
 		gl_FragColor = vec4(ambient.rgb + df*diffuse.rgb+ specular.rgb , 1.);
     }
 }

@@ -45,7 +45,7 @@ RotateNormal( float angx, float angy, vec3 n )
 void
 main( )
 {	
-	vec3 vNormal = normalize( gl_NormalMatrix * gl_Normal );
+    vec3 vNormal = normalize( gl_NormalMatrix * gl_Normal );
 	
 	vec4 nvx = texture( Noise3, uNoiseFreq*gl_Vertex.xyz);
 	float angx = nvx.r + nvx.g + nvx.b + nvx.a  -  2.;

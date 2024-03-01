@@ -1,14 +1,17 @@
 ##OpenGL GLIB
 
-Background 0 0 0
-Smooth
+//Background 0 0 0
+//Smooth
 Perspective 70
-LookAt 0 0 70  0 0 0  0 1 0
+LookAt 0 0 45  0 0 0  0 1 0
 
+CubeMap 6 kec.posx.bmp kec.negx.bmp  kec.posy.bmp kec.negy.bmp   kec.posz.bmp kec.negz.bmp
+
+CubeMap 7 kec.posx.bmp kec.negx.bmp  kec.posy.bmp kec.negy.bmp   kec.posz.bmp kec.negz.bmp
 
 Vertex		    Project6.vert
 Fragment	    Project6.frag
-Program		    Project6\
+Program		    Project6                        \
                 uNoiseAmp <0. 0.05. 5.>\
                 uNoiseFreq <0. 0.1 10.>\
                 uKa <0. 0.1 1.0>\
@@ -19,8 +22,29 @@ Program		    Project6\
                 uLightY <-40. 0. 40.>\
                 uLightZ <-40. 20. 40.>\
                 uColor {0.8. 0.5. 0.2. 1.}\
-                uSpecularColor {1. 1. 1. 1.}\
-                uFlat <0>
+                uSpecularColor {1. 1. 1. 1.}    
 
 Color .9 .7 .3
 Obj dragon138.obj
+
+Vertex			texture.vert
+Fragment		texture.frag
+Program Texture	TexUnit 6
+
+Texture2D  6  kec.posx.bmp
+QuadYZ 50. 50. 100 100
+
+Texture2D  6  kec.negx.bmp
+QuadYZ -50. 50. 100
+
+Texture2D  6  kec.posy.bmp
+QuadXZ 50. 50. 100 100
+
+Texture2D  6  kec.negy.bmp
+QuadXZ -50. 50. 100 100
+
+Texture2D  6  kec.posz.bmp
+QuadXY 50. 50. 100 100
+
+Texture2D  6  kec.negz.bmp
+QuadXY -50. 50. 100 100
