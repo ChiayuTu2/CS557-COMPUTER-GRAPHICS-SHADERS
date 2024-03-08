@@ -1,0 +1,17 @@
+##OpenGL GLIB
+Perspective 70
+LookAt  0 0 3     0 0 0    0 1 0
+
+Vertex   quantsph.vert
+Geometry quantsph.geom
+Fragment quantsph.frag
+Program QuantSph                                        \
+        uLevel <0 3 5>                                  \
+        uDiam <0.01 0.5 1.0>                            \
+        uQuantize <0.5 2. 6.>                           \
+        uKa <0. .1 1.>                                  \
+        uKd <0. .6 1.>                                  \
+        uKs <0. .3 1.>                                  \
+        uShininess <1. 15. 20>
+
+Obj dragon010.obj
