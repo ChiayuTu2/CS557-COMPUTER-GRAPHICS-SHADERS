@@ -1,0 +1,41 @@
+##OpenGL GLIB
+
+Perspective 70
+LookAt 0 0 5  0 0 0  0 10 0
+
+Timer 3.
+
+Vertex   finalProj.vert
+Fragment finalProj.frag
+Program  finalProj  			        \
+		 uA <0. 10. 50.>			    \
+		 uTol <0. 0. .0625>		    \
+		 uColorNoiseMag <0. 0. 5.>	\
+		 uColorNoiseFreq <0. 1. 2.>	\
+		 uVertNoise <0. 0. 1.5>	    \
+		 uKa <0. 0.1 1.0>            \
+		 uKd <0. 0.6 1.0>            \
+		 uKs <0. 0.3 1.0>            \
+		 uShininess <1. 10. 50.>
+
+Color 1  1  1
+Obj pigY.obj
+
+Vertex   texture.vert
+Fragment texture.frag
+Program  Texture  TexUnit 6
+
+Texture2D  6  nvposx.bmp
+QuadYZ 5. 5. 10 10
+Texture2D  6  nvnegx.bmp
+QuadYZ -5. 5. 10 10
+Texture2D  6  nvposy.bmp
+QuadXZ 5. 5. 10 10
+Texture2D  6  nvnegy.bmp
+QuadXZ -5. 5. 10 10
+Texture2D  6  nvposz.bmp
+QuadXY 5. 5. 10 10
+Texture2D  6  nvnegz.bmp
+QuadXY -5. 5. 10 10
+
+CubeMap 6 nvposx.bmp nvnegx.bmp  nvposy.bmp nvnegy.bmp   nvposz.bmp nvnegz.bmp
