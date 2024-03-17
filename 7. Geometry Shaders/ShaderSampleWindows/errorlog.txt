@@ -1,0 +1,5 @@
+
+0(70) : error C1503: undefined variable "uRedDepth"
+0(70) : error C1503: undefined variable "uBlueDepth"
+0(70) : error C1503: undefined variable "uRedDepth"
+

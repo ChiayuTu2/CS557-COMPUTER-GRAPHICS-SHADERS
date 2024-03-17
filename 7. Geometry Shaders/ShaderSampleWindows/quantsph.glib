@@ -1,6 +1,6 @@
 ##OpenGL GLIB
 Perspective 70
-LookAt  0 0 3     0 0 0    0 1 0
+LookAt 0 0 3     0 0 0    0 1 0
 
 Vertex   quantsph.vert
 Geometry quantsph.geom
@@ -12,6 +12,9 @@ Program QuantSph                                        \
         uKa <0. .1 1.>                                  \
         uKd <0. .6 1.>                                  \
         uKs <0. .3 1.>                                  \
-        uShininess <1. 15. 20>
+        uShininess <1. 15. 20>                          \
+        uUseChromaDepth <0>                             \
+        uRedDepth  <0. 1. 10.>                          \
+        uBlueDepth <0. 1. 10.>
 
-Obj dragon010.obj
+Obj dragon138.obj
