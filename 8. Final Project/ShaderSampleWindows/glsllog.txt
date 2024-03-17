@@ -1,0 +1,4 @@
+
+0(47) : error C1038: declaration of "d" conflicts with previous declaration at 0(37)
+0(50) : error C1038: declaration of "s" conflicts with previous declaration at 0(29)
+
